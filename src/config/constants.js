@@ -13,15 +13,15 @@ const testConfig = {
 };
 
 const prodConfig = {
-  MONGO_URL: 'mongodb://webkhoa:3fd825e704a54887b856fafc7d881726@127.0.0.1/webkhoa',
+  MONGO_URL: 'mongodb://webthinh:thinhtruong@127.0.0.1/webthinh',
   JWT_SECRET: 'thisisasecretsecret',
   AWS_ACCESS_ID: 'AKIAJKULDKEKH27NB33Q',
   AWS_SECRET_KEY: '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',
-  CORS_REMOTE: 'https://webkhoa-service.innoteq.vn',
+  CORS_REMOTE: 'http://thinhtruong.asia',
 };
 
 const defaultConfig = {
-  PORT: process.env.PORT || 7777,
+  PORT: process.env.PORT || 4444,
 };
 
 function envConfig(env) {
