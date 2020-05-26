@@ -2,7 +2,10 @@
 Language: node_js 
 node_js: stable
 services: mongodb
-sudo: true
+addons:
+  apt:
+    packages:
+    - sshpass
 
 before_script:
   - mongo fba-service-test --eval 'db.createUser({user:"webthinh",pwd:"thinhtruong",roles:["readWrite"]});'
