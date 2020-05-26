@@ -3,6 +3,9 @@ Language: node_js
 node_js: stable
 services: mongodb
 
+before_script:
+  - mongo fba-service-test --eval 'db.createUser({user:"webthinh",pwd:"thinhtruong",roles:["readWrite"]});'
+
 branches: 
   only: 
     - master

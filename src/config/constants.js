@@ -7,7 +7,7 @@ const devConfig = {
 };
 
 const testConfig = {
-  MONGO_URL: 'mongodb://localhost/fba-service-test',
+  MONGO_URL: 'mongodb://webthinh:thinhtruong@127.0.0.1/fba-service-test',
   JWT_SECRET: 'thisisasecret',
   CORS_REMOTE: 'http://localhost:3000',
 };
