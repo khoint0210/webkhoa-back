@@ -38,5 +38,5 @@ jobs:
         - export SSHPASS=Quangthinh@98
         - sshpass -e scp -o stricthostkeychecking=no -r package.json root@13.67.51.59:/usr/share/nginx/html/thinhtruong.asia/webkhoa-back
         - sshpass -e scp -o stricthostkeychecking=no -r build/. root@13.67.51.59:/usr/share/nginx/html/thinhtruong.asia/webkhoa-back/build
-        - script -qc "sshpass -e ssh -o StrictHostKeyChecking=no root@13.67.51.59 'cd /usr/share/nginx/html/thinhtruong.asia/webkhoa-back && yarn && cd build && pm2 remove webkhoa-back && pm2 start index.js -name webkhoa-back'"
+        - script -qc "sshpass -e ssh -o StrictHostKeyChecking=no root@13.67.51.59 'cd /usr/share/nginx/html/thinhtruong.asia/webkhoa-back && yarn && cd build && pm2 delete webkhoa-back && pm2 start index.js --name "webkhoa-backend"'"
         
