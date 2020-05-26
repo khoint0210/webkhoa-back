@@ -7,7 +7,7 @@ const demoUser = {
   lecturerId: '93989',
   password: '123456789',
   fullname: 'Nguyen Truong KHoi',
-  role: 4,
+  role: [4],
   email: 'khoihhhhl@gmail.com',
 };
 
@@ -19,7 +19,7 @@ const demoUserLogin = {
 const demoUserUpdate = {
   password: '1234567890',
   fullname: 'Nguyen Truong Khoi',
-  role: 4,
+  role: [4],
   email: 'khoihhhhl@gmail.com',
 };
 
@@ -48,14 +48,7 @@ describe('user module', () => {
     const response = await request(app).get('/user/').set('Authorization', token);
     expect(response.statusCode).toBe(200);
     const list = await User.find({ isRemoved: false });
-    expect(response.body.length).toBe(list.length);
-  });
-
-  test('should return lecture list', async () => {
-    const response = await request(app).get('/user/lecturer').set('Authorization', token);
-    expect(response.statusCode).toBe(200);
-    const list = await User.find({ role: 1, isRemoved: false });
-    expect(response.body.length).toBe(list.length);
+    expect(response.body.total).toBe(list.length);
   });
 
   test('should update user', async () => {

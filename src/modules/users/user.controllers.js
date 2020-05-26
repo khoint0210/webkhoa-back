@@ -91,12 +91,14 @@ export async function updateUser(req, res) {
 
 export async function deleteUser(req, res) {
   try {
-    const user = await User.findOneAndRemove({ lecturerId: req.params.id });
+    const user = await User.findOne({ lecturerId: req.params.id, isRemoved: false });
     if (!user) {
       return res.sendStatus(HTTPStatus.NOT_FOUND);
     }
 
-    return res.status(HTTPStatus.OK).json(user);
+    user.isRemoved = true;
+
+    return res.status(HTTPStatus.OK).json(await user.save());
   } catch (e) {
     return res.status(HTTPStatus.BAD_REQUEST).json(e.message);
   }

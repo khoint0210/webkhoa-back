@@ -25,7 +25,7 @@ const demoUser = {
   lecturerId: '93989',
   password: '123456789',
   fullname: 'Nguyen Truong KHoi',
-  role: 1,
+  role: [1],
   email: 'khoihhhhl@gmail.com',
 };
 
