@@ -1,6 +1,7 @@
 # Specify the language node_js, nodejs version stable 
 Language: node_js 
 node_js: stable
+services: mongodb
 
 branches: 
   only: 
