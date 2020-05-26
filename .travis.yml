@@ -2,6 +2,7 @@
 Language: node_js 
 node_js: stable
 services: mongodb
+sudo: true
 
 before_script:
   - mongo fba-service-test --eval 'db.createUser({user:"webthinh",pwd:"thinhtruong",roles:["readWrite"]});'
@@ -22,12 +23,14 @@ install:
 
 jobs:
   include:
-    - stage: "Tests"                # naming the Tests stage
-      name: "Unit Tests"            # names the first Tests stage job
+    - stage: "Tests"                
+      name: "Unit Tests"            
     - script: yarn test
+
     - stage: build
       name: "Build"
       script: yarn build
+
     - stage: deploy
       name: "Deploy"
       script:
