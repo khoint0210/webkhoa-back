@@ -25,7 +25,7 @@ const demoUserUpdate = {
 
 let token;
 
-describe('user module', () => {
+describe('user modules', () => {
   beforeAll(async () => { // eslint-disable-line
     await User.remove({});
   });
